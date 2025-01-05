@@ -5,10 +5,10 @@
 package frc.robot;
 
 import frc.robot.Constants.OperatorConstants;
-import frc.robot.commands.Autos;
+// import frc.robot.commands.Autos;
 import frc.robot.commands.JoystickDriveCommand;
 import frc.robot.subsystems.DifferentialDriveSubsystem;
-import frc.robot.subsystems.DifferentialDriveSubsystem;
+// import frc.robot.subsystems.DifferentialDriveSubsystem;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.RunCommand;
@@ -37,6 +37,8 @@ public class RobotContainer {
   public RobotContainer() {
     // Configure the trigger bindings
     configureBindings();
+    
+    // differentialDriveSubsystem.setDefaultCommand(joystickDriveCommand);
 
         differentialDriveSubsystem.setDefaultCommand(
           new RunCommand(
@@ -44,11 +46,6 @@ public class RobotContainer {
           (m_driverController.getLeftY()),m_driverController.getRightY())
           ,differentialDriveSubsystem));
 
-      // m_robotDrive.setDefaultCommand(
-      //           new RunCommand(
-      //                   () -> m_robotDrive.tankDrive(
-      //                           (m_driverController.getLeftY()), m_driverController.getRightY()),
-      //                   m_robotDrive));
   }
 
   /**

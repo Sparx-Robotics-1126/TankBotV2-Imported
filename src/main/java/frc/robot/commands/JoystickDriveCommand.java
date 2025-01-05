@@ -6,7 +6,6 @@ package frc.robot.commands;
 
 import frc.robot.RobotContainer;
 import frc.robot.subsystems.DifferentialDriveSubsystem;
-import frc.robot.subsystems.DifferentialDriveSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 
 /** An example command that uses an example subsystem. */
