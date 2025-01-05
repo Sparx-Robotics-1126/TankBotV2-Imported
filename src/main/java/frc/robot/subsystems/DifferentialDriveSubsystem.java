@@ -57,4 +57,16 @@ public DifferentialDriveSubsystem() {
     return PigeonSubsystem.getInstance().getAngle();
   }
 
+   /**
+   * Controls the left and right sides of the drive directly with voltages.
+   *
+   * @param leftY  the commanded left output
+   * @param rightY the commanded right output
+   */
+  public void tankDrive(double leftY, double rightY) {
+   
+    differentialDrive.tankDrive(leftY, rightY, true);
+  }
+
+
 }

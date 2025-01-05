@@ -11,6 +11,7 @@ import frc.robot.subsystems.DifferentialDriveSubsystem;
 import frc.robot.subsystems.DifferentialDriveSubsystem;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.RunCommand;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 
@@ -36,7 +37,18 @@ public class RobotContainer {
   public RobotContainer() {
     // Configure the trigger bindings
     configureBindings();
-    differentialDriveSubsystem.setDefaultCommand(joystickDriveCommand);
+
+        differentialDriveSubsystem.setDefaultCommand(
+          new RunCommand(
+          () -> differentialDriveSubsystem.tankDrive(
+          (m_driverController.getLeftY()),m_driverController.getRightY())
+          ,differentialDriveSubsystem));
+
+      // m_robotDrive.setDefaultCommand(
+      //           new RunCommand(
+      //                   () -> m_robotDrive.tankDrive(
+      //                           (m_driverController.getLeftY()), m_driverController.getRightY()),
+      //                   m_robotDrive));
   }
 
   /**
